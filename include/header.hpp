@@ -71,7 +71,7 @@ public:
             --top;
             return rezult;
         }
-		exit ERROR;
+        exit(ERROR);
     }
 };
 
