@@ -41,12 +41,10 @@ template <typename T>
 class stack{
 private:
     T ArrStack[30];
-    int top;
+    int top = 0;
 
 public:
-    stack(){
-        top = 0;
-    }
+    stack(){}
     template <typename ... Args>
     void push_emplace(Args&&... value){
         T obj(std::forward<Args>(value)...);
@@ -67,7 +65,7 @@ public:
     T pop(){
         if (top > 0){
             T rezult = ArrStack[top-1];
-            ArrStack[--top];
+            --top;
             return rezult;
         }
     }
