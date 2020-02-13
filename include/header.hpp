@@ -27,9 +27,11 @@ public:
             top++;
         }
     }
-    void pop(){
+    T pop(){
         if (top > 0){
+            T rezult = ArrStack[top-1];
             ArrStack[--top];
+            return rezult;
         }
     }
     const T& head() const{
