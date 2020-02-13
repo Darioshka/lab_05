@@ -36,6 +36,13 @@ TEST(two, EmptyTest) {
     EXPECT_EQ(Stack_2.pop().sum, 4);
 }
 
+TEST(three, EmptyTest) {
+    EXPECT_EQ(std::is_move_constructble<Stack<int>>::value, true);
+    EXPECT_EQ(std::is_move_assignable<Stack<int>>::value, true);
+    EXPECT_EQ(std::is_move_constructble<stack<int>>::value, true);
+    EXPECT_EQ(std::is_move_assignable<stack<int>>::value, true);
+	EXPECT_EQ(std::is_copy_assignable<stack<int>>::value, false);
+}
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
