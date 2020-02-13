@@ -13,7 +13,7 @@ TEST(Example, EmptyTest) {
     Stack_1.push(var_2);
     Stack_1.pop();
     Stack_1.push(var_3);
-	EXPECT_EQ(static_cast<int>(Stack_1.head()), 10);  
+    EXPECT_EQ(static_cast<int>(Stack_1.head()), 10);
 }
 
 int main(int argc, char **argv) {
