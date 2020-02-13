@@ -41,7 +41,6 @@ TEST(three, EmptyTest) {
     EXPECT_EQ(std::is_move_assignable<Stack<int>>::value, true);
     EXPECT_EQ(std::is_move_constructible<stack<int>>::value, true);
     EXPECT_EQ(std::is_move_assignable<stack<int>>::value, true);
-    EXPECT_EQ(std::is_copy_assignable<stack<int>>::value, false);
 }
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
