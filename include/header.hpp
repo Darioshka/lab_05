@@ -7,6 +7,7 @@
 
 template <typename T>
 class Stack{
+	
 private:
     T ArrStack[30];
     int top;
@@ -17,24 +18,24 @@ public:
     }
 
     void push(T&& value){
-        if(top < 30){
+        if (top < 30){
             ArrStack[top] = value;
             top++;
         }
     }
     void push(const T& value){
-        if(top < 30){
+        if (top < 30){
             ArrStack[top] = value;
             top++;
         }
     }
 	
     void pop(){
-        if(top > 0){
+        if (top > 0){
             ArrStack[--top];
         }
     }
-	
+    
     const T& head() const{
         return ArrStack[top-1];
     }
@@ -42,7 +43,7 @@ public:
 
 template <typename T>
 class stack{
-public:
+
 private:
     T ArrStack[30];
     int top;
@@ -51,6 +52,7 @@ public:
     stack(){
         top = 0;
     }
+	
     template <typename ... Args>
     void push_emplace(Args&&... value){
         T obj(std::forward<Args>(value)...);
@@ -59,16 +61,18 @@ public:
             top++;
         }
     }
+	
     void push(T&& value){
         if(top < 30) {
             ArrStack[top] = value;
             top++;
         }
     }
+	
     const T& head() const{
         return ArrStack[top-1];
-
     }
+	
     T pop(){
         if(top > 0){
             T rezult = ArrStack[top-1];
