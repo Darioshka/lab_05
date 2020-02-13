@@ -10,7 +10,7 @@ class Stack{
 private:
     T ArrStack[30];
     int top;
-	
+    
 public:
     Stack(){
         top = 0;
@@ -39,4 +39,43 @@ public:
         return ArrStack[top-1];
     }
 };
+
+template <typename T>
+class stack{
+public:
+private:
+    T ArrStack[30];
+    int top;
+
+public:
+    stack(){
+        top = 0;
+    }
+    template <typename ... Args>
+    void push_emplace(Args&&... value){
+        T obj(std::forward<Args>(value)...);
+        if(top < 30) {
+            ArrStack[top] = obj;
+            top++;
+        }
+    }
+    void push(T&& value){
+        if(top < 30) {
+            ArrStack[top] = value;
+            top++;
+        }
+    }
+    const T& head() const{
+        return ArrStack[top-1];
+
+    }
+    T pop(){
+        if(top > 0){
+            T rezult = ArrStack[top-1];
+            ArrStack[--top];
+            return rezult;
+        }
+    }
+};
+
 #endif // INCLUDE_HEADER_HPP_
