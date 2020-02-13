@@ -7,6 +7,7 @@
 class Length{
 public:
     int sum;
+	Length() {}
     Length(std::string S1, std::string S2){
         sum = S1.length() + S2.length();
     }
