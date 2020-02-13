@@ -4,6 +4,7 @@
 #define INCLUDE_HEADER_HPP_
 #include <iostream>
 #include <cstring>
+#define ERROR -1
 
 template <typename T>
 class Stack{
@@ -13,8 +14,8 @@ private:
 
 public:
     Stack(){
-		top = 0;
-	}
+        top = 0;
+    }
     void push(T&& value){
         if (top < 30){
             ArrStack[top] = value;
@@ -45,8 +46,8 @@ private:
 
 public:
     stack(){
-		top = 0;
-	}
+        top = 0;
+    }
     template <typename ... Args>
     void push_emplace(Args&&... value){
         T obj(std::forward<Args>(value)...);
@@ -70,6 +71,7 @@ public:
             --top;
             return rezult;
         }
+		exit ERROR;
     }
 };
 
