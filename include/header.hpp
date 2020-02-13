@@ -39,7 +39,6 @@ public:
 
 template <typename T>
 class stack{
-
 private:
     T ArrStack[30];
     int top;
@@ -65,7 +64,6 @@ public:
     const T& head() const{
         return ArrStack[top-1];
     }
-    
     T pop(){
         if (top > 0){
             T rezult = ArrStack[top-1];
