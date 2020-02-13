@@ -32,7 +32,7 @@ TEST(two, EmptyTest) {
     stack<Length> Stack_2;
     Stack_2.push_emplace("Halo", "Dasha");
     Stack_2.push(std::move(obj));
-    EXPECT_EQ(static_cast<int>(Stack_2.pop()), 4);
+    EXPECT_EQ(Stack_2.pop().sum, 4);
 }
 
 int main(int argc, char **argv) {
