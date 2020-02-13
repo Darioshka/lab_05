@@ -7,10 +7,10 @@
 class Length{
 public:
     int sum;
-    Length(string S1, string S2){
+    Length(std::string S1, std::string S2){
         sum = S1.length() + S2.length();
     }
-    explicit Length(string S1){
+    explicit Length(std::string S1){
         sum = S1.length();
     }
 };
@@ -32,7 +32,7 @@ TEST(two, EmptyTest) {
     stack<Length> Stack_2;
     Stack_2.push_emplace("Halo", "Dasha");
     Stack_2.push(std::move(obj));
-    EXPECT_EQ(static_cast<int>(Stack_1.pop()), 4);
+    EXPECT_EQ(static_cast<int>(Stack_2.pop()), 4);
 }
 
 int main(int argc, char **argv) {
