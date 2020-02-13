@@ -13,7 +13,7 @@ public:
     explicit Length(string S1){
         sum = S1.length();
     }
-}
+};
 
 TEST(one, EmptyTest) {
     Stack<int> Stack_1;
@@ -28,7 +28,7 @@ TEST(one, EmptyTest) {
 }
 
 TEST(two, EmptyTest) {
-	Length obj("Malo");
+    Length obj("Malo");
     stack<Length> Stack_2;
     Stack_2.push_emplace("Halo", "Dasha");
     Stack_2.push(std::move(obj));
