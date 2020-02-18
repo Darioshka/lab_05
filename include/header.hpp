@@ -45,11 +45,10 @@ private:
     int top;
 
 public:
-    stack(int s){
+    explicit stack(int s){
         size = s;
         top = 0;
         ArrStack = new T[size];
-
     }
     template <typename ... Args>
     void push_emplace(Args&&... value){
