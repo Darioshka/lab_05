@@ -20,7 +20,7 @@ public:
         top = 0;
     }
     ~Stack() {
-        delete[] ArrStack;
+        delete [] ArrStack;
     }
     void push(T&& value){
         top++;
