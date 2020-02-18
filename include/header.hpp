@@ -15,7 +15,7 @@ private:
 
 public:
     explicit Stack(int s){
-		size = s;
+        size = s;
         top = 0;
     }
     ~Stack() {
@@ -25,13 +25,11 @@ public:
         top++;
         ArrStack = static_cast<T *>(realloc(ArrStack, top * sizeof(T)));
         ArrStack[top - 1] = value;
-
     }
     void push(const T& value){
         top++;
         ArrStack = static_cast<T *>(realloc(ArrStack, top * sizeof(T)));
         ArrStack[top - 1] = value;
-
     }
     void pop(){
         if (top == 0) {
