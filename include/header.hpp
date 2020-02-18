@@ -82,8 +82,6 @@ public:
         --top;
         ArrStack = static_cast<T *> (realloc(ArrStack, top * sizeof(T)));
         return rezult;
-        }
-        exit(ERROR);
     }
 };
 
