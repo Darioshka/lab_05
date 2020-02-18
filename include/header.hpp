@@ -51,6 +51,9 @@ public:
         top = 0;
         ArrStack = new T[size];
     }
+    ~stack(){
+        delete [] ArrStack;
+    }
     template <typename ... Args>
     void push_emplace(Args&&... value){
         T obj(std::forward<Args>(value)...);
