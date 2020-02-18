@@ -24,12 +24,12 @@ public:
     }
     void push(T&& value){
         top++;
-        ArrStack = static_cast<T *>(realloc(ArrStack, top * sizeof(T)));
+        ArrStack = static_cast<T*>(realloc(ArrStack, top * sizeof(T)));
         ArrStack[top - 1] = value;
     }
     void push(const T& value){
         top++;
-        ArrStack = static_cast<T *>(realloc(ArrStack, top * sizeof(T)));
+        ArrStack = static_cast<T*>(realloc(ArrStack, top * sizeof(T)));
         ArrStack[top - 1] = value;
     }
     void pop(){
@@ -37,7 +37,7 @@ public:
             exit(ERROR);
         }
         --top;
-        ArrStack = static_cast<T *> (realloc(ArrStack, top * sizeof(T)));
+        ArrStack = static_cast<T*>(realloc(ArrStack, top * sizeof(T)));
     }
     const T& head() const{
         return ArrStack[top-1];
@@ -63,12 +63,12 @@ public:
     void push_emplace(Args&&... value){
         T obj(std::forward<Args>(value)...);
         top++;
-        ArrStack = static_cast<T *>(realloc(ArrStack, top * sizeof(T)));
+        ArrStack = static_cast<T*>(realloc(ArrStack, top * sizeof(T)));
         ArrStack[top - 1] = obj;
     }
     void push(T&& value){
         top++;
-        ArrStack = static_cast<T *>(realloc(ArrStack, top * sizeof(T)));
+        ArrStack = static_cast<T*>(realloc(ArrStack, top * sizeof(T)));
         ArrStack[top - 1] = value;
     }
     const T& head() const{
@@ -80,7 +80,7 @@ public:
         }
         T rezult = ArrStack[top - 1];
         --top;
-        ArrStack = static_cast<T *> (realloc(ArrStack, top * sizeof(T)));
+        ArrStack = static_cast<T*> (realloc(ArrStack, top * sizeof(T)));
         return rezult;
     }
 };
