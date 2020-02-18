@@ -41,23 +41,26 @@ public:
 template <typename T>
 class stack{
 private:
-    T ArrStack[30];
+    T *ArrStack;
     int top;
 
 public:
-    stack(){
+    stack(int s){
+        size = s;
         top = 0;
+        ArrStack = new T[size];
+
     }
     template <typename ... Args>
     void push_emplace(Args&&... value){
         T obj(std::forward<Args>(value)...);
-        if (top < 30) {
+        if (top < size) {
             ArrStack[top] = obj;
             top++;
         }
     }
     void push(T&& value){
-        if (top < 30) {
+        if (top < size) {
             ArrStack[top] = value;
             top++;
         }
