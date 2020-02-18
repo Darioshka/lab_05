@@ -30,7 +30,7 @@ TEST(one, EmptyTest) {
 
 TEST(two, EmptyTest) {
     Length obj("Malo");
-    stack<Length> Stack_2;
+    stack<Length> Stack_2(30);
     Stack_2.push_emplace("Halo", "Dasha");
     Stack_2.push(std::move(obj));
     EXPECT_EQ(Stack_2.pop().sum, 4);
