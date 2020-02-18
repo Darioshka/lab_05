@@ -43,7 +43,7 @@ class stack{
 private:
     T *ArrStack;
     int top;
-	int size;
+    int size;
 
 public:
     explicit stack(int s){
