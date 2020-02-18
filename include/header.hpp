@@ -4,6 +4,7 @@
 #define INCLUDE_HEADER_HPP_
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
 #define ERROR -1
 
 template <typename T>
