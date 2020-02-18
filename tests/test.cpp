@@ -17,7 +17,7 @@ public:
 };
 
 TEST(one, EmptyTest) {
-    Stack<int> Stack_1;
+    Stack<int> Stack_1(30);
     int var_1 = 6;
     int var_2 = 8;
     int var_3 = 10;

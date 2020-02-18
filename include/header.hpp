@@ -9,29 +9,36 @@
 template <typename T>
 class Stack{
 private:
-    T ArrStack[30];
+    T *ArrStack;
     int top;
+    int size;
 
 public:
-    Stack(){
+    explicit Stack(int s){
+		size = s;
         top = 0;
     }
+    ~Stack() {
+        delete[] ArrStack;
+    }
     void push(T&& value){
-        if (top < 30){
-            ArrStack[top] = value;
-            top++;
-        }
+        top++;
+        ArrStack = static_cast<T *>(realloc(ArrStack, top * sizeof(T)));
+        ArrStack[top - 1] = value;
+
     }
     void push(const T& value){
-        if (top < 30){
-            ArrStack[top] = value;
-            top++;
-        }
+        top++;
+        ArrStack = static_cast<T *>(realloc(ArrStack, top * sizeof(T)));
+        ArrStack[top - 1] = value;
+
     }
     void pop(){
-        if (top > 0){
-            --top;
+        if (top == 0) {
+            exit(ERROR);
         }
+        --top;
+        ArrStack = static_cast<T *> (realloc(ArrStack, top * sizeof(T)));
     }
     const T& head() const{
         return ArrStack[top-1];
@@ -49,7 +56,6 @@ public:
     explicit stack(int s){
         size = s;
         top = 0;
-        ArrStack = new T[size];
     }
     ~stack(){
         delete [] ArrStack;
@@ -57,25 +63,27 @@ public:
     template <typename ... Args>
     void push_emplace(Args&&... value){
         T obj(std::forward<Args>(value)...);
-        if (top < size) {
-            ArrStack[top] = obj;
-            top++;
-        }
+        top++;
+        ArrStack = static_cast<T *>(realloc(ArrStack, top * sizeof(T)));
+        ArrStack[top - 1] = obj;
     }
     void push(T&& value){
-        if (top < size) {
-            ArrStack[top] = value;
-            top++;
+        top++;
+        ArrStack = static_cast<T *>(realloc(ArrStack, top * sizeof(T)));
+        ArrStack[top - 1] = value;
         }
     }
     const T& head() const{
         return ArrStack[top-1];
     }
     T pop(){
-        if (top > 0){
-            T rezult = ArrStack[top-1];
-            --top;
-            return rezult;
+        if (top == 0) {
+            exit(ERROR);
+        }
+        T rezult = ArrStack[top - 1];
+        --top;
+        ArrStack = static_cast<T *> (realloc(ArrStack, top * sizeof(T)));
+        return rezult;
         }
         exit(ERROR);
     }
