@@ -69,7 +69,6 @@ public:
         top++;
         ArrStack = static_cast<T *>(realloc(ArrStack, top * sizeof(T)));
         ArrStack[top - 1] = value;
-        }
     }
     const T& head() const{
         return ArrStack[top-1];
