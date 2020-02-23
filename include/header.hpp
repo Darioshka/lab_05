@@ -15,7 +15,7 @@ private:
     int size;
 
 public:
-    explicit Stack(int s){
+    explicit Stack(int s) : ArrStack(nullptr){
         size = s;
         top = 0;
     }
@@ -52,7 +52,7 @@ private:
     int size;
 
 public:
-    explicit stack(int s){
+    explicit stack(int s) : ArrStack(nullptr){
         size = s;
         top = 0;
     }
