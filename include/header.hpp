@@ -20,7 +20,7 @@ public:
         top = 0;
     }
     ~Stack() {
-        delete [] ArrStack;
+        free(ArrStack);
     }
     void push(T&& value){
         top++;
@@ -57,7 +57,7 @@ public:
         top = 0;
     }
     ~stack(){
-        delete [] ArrStack;
+        free(ArrStack);
     }
     template <typename ... Args>
     void push_emplace(Args&&... value){
